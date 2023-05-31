@@ -1,0 +1,19 @@
+
+{python:S117-"_Rename this local variable "secretAdminKey" to match the regular expression ^[_a-z][a-z0-9_]*$.(òÔ´üøÿÿÿÿ
+zpython:S117I"^Rename this local variable "checkPassword" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÑÎ±¸øÿÿÿÿ
+opython:S117C"YRename this local variable "uniqueId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ü¹Î}
+opython:S117V"YRename this local variable "uniqueId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ü¹Î}
+opython:S117`"XRename this local variable "uuidStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(¦·Ê‰
+Tpython:S5754o"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+~python:S117s"bRename this local variable "resetPasswordUUID" to match the regular expression ^[_a-z][a-z0-9_]*$.(†ƒØ³þÿÿÿÿ
+~python:S117"bRename this local variable "resetPasswordUUID" to match the regular expression ^[_a-z][a-z0-9_]*$.(†ƒØ³þÿÿÿÿ
+ypython:S117‰"aRename this local variable "updateSerializer" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰Ã¾
+{python:S117-"_Rename this local variable "secretAdminKey" to match the regular expression ^[_a-z][a-z0-9_]*$.(òÔ´üøÿÿÿÿ
+zpython:S117I"^Rename this local variable "checkPassword" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÑÎ±¸øÿÿÿÿ
+opython:S117C"YRename this local variable "uniqueId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ü¹Î}
+opython:S117V"YRename this local variable "uniqueId" to match the regular expression ^[_a-z][a-z0-9_]*$.(ü¹Î}
+opython:S117`"XRename this local variable "uuidStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(¦·Ê‰
+Tpython:S5754o"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+~python:S117s"bRename this local variable "resetPasswordUUID" to match the regular expression ^[_a-z][a-z0-9_]*$.(†ƒØ³þÿÿÿÿ
+~python:S117"bRename this local variable "resetPasswordUUID" to match the regular expression ^[_a-z][a-z0-9_]*$.(†ƒØ³þÿÿÿÿ
+ypython:S117‰"aRename this local variable "updateSerializer" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰Ã¾
