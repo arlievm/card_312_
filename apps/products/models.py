@@ -38,3 +38,36 @@ class Playbill(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class Discountslider(models.Model):
+    
+    class Meta:
+        db_table = "discount"
+        verbose_name = "Баннер для Афиша"
+        verbose_name_plural = "Баннер для Афиша"
+        
+    image = models.ImageField(verbose_name="Фотография",max_length=256)
+    title = models.CharField(verbose_name="Название", max_length=128)
+    description = models.TextField(verbose_name='Описание')
+    
+    def __str__(self):
+        return self.title
+    
+class Afishaslider(models.Model):
+        
+    class Meta:
+        db_table = 'afisha'
+        verbose_name = 'название описание картинка'
+        verbose_name_plural = 'название описание картинка'
+            
+    photo = models.ImageField(verbose_name="Фотография *(1200x415)")
+    description = models.TextField(verbose_name="Описание")
+    
+    def __str__(self):
+        return self.description
+    
+
+    
+    
+    
