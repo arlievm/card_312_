@@ -5,6 +5,13 @@ from django.contrib.auth.models import Group
 from django.utils.safestring import mark_safe
 
 from apps.users.models import User
+from apps.users.models import Basket
+from apps.users.models import Mycard
+from apps.users.models import Bankcard
+from apps.users.models import Subscr
+from apps.users.models import Coment
+from apps.users.models import Like
+from apps.users.models import Favorites
 
 class UserCreationForm(forms.ModelForm):
     class Meta:
@@ -55,3 +62,12 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.register(User, CustomUserAdmin);
 admin.site.unregister(Group);
+
+
+admin .site.register(Basket)
+admin.site.register(Mycard)
+admin.site.register(Bankcard)
+admin.site.register(Subscr)
+admin.site.register(Coment)
+admin.site.register(Like)
+admin.site.register(Favorites)

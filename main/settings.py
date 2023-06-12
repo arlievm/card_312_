@@ -1,4 +1,4 @@
-import django_heroku
+# import django_heroku
 import os
 from pathlib import Path
 
@@ -39,10 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # APPS
+    
     'apps.categories.apps.CategoriesConfig',
     'apps.partners.apps.PartnersConfig',
     'apps.products.apps.ProductsConfig',
     'apps.users.apps.UsersConfig',
+    'apps.contact.apps.ContactConfig',
+    'apps.homes.apps.HomesConfig',
+    'apps.discount.apps.DiscountConfig',
+    
     # REST
     'rest_framework',
     'django_filters',
@@ -176,4 +181,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

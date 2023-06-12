@@ -7,6 +7,9 @@ from django.conf import settings
 from django.db import models
 
 from apps.users.managers import CustomManager
+
+from apps.products.models import Products
+
 from .services import get_upload_path, validate_file_extension
 
 
@@ -56,3 +59,106 @@ class User(AbstractUser):
         if not self.id:
             self.uniqueId = uuid.uuid4()
         super(User, self).save(force_insert=False, force_update=False, using=None, update_fields=None)
+        
+        quantity = models.PositiveIntegerField(default=0)
+        user = models.ForeignKey(Products,on_delete=models.CASCADE)
+    
+    
+class Basket(models.Model):
+    user = models.ForeignKey("User",on_delete=models.CASCADE)
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=0)
+    created = models.DateTimeField(auto_now_add=True)
+        
+    def __str__(self):
+        return f'Корзина{self.user.username} | Корзина {self.product.name}'
+        
+    
+
+
+class Mycard(models.Model):
+    class Meta:
+        verbose_name = 'Моя карта'
+
+    name = models.CharField(verbose_name='№ карты',max_length=32)
+    user = models.ForeignKey("User",on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name
+    
+    
+class Bankcard(models.Model):
+        class Meta:
+            verbose_name = 'Добавить банковскую карту '
+            verbose_name_plural ='Добавить банковскую карту '
+            
+        user = models.ForeignKey("User",on_delete=models.CASCADE)    
+        numcard = models.IntegerField(verbose_name='Номер карты', max_length=64)
+        period = models.IntegerField(verbose_name='Срок действия карты', max_length=12)
+        name_plural = models.CharField(verbose_name='Имя владельца', max_length=32)
+        code = models.IntegerField(verbose_name='Код CVC/CVV', max_length=12)
+        email = models.EmailField(verbose_name='Email', max_length=64, default=None, unique=True, blank=True, null=True)
+        
+        def __str__(self):
+            return self.name_plural
+        
+class Subscr(models.Model):
+        
+        class Meta:
+            verbose_name = 'Подписки'
+            
+        user = models.ForeignKey("User",on_delete=models.CASCADE)
+        image = models.ImageField(verbose_name='Фотография', upload_to='apps/images/users')    
+        name = models.CharField(verbose_name="Название", max_length=50)
+        
+        def __str__(self):
+            return self.name
+        
+        
+class Coment(models.Model):
+        
+        class Meta:
+            verbose_name = 'Мои комментарии'
+            
+        user = models.ForeignKey("User",on_delete=models.CASCADE)
+        image = models.ImageField(verbose_name='Фотография', upload_to='apps/images/users')    
+        name = models.CharField(verbose_name="Oписание", max_length=50)
+        
+        def __str__(self):
+            return self.name
+        
+        
+        
+        
+class Like(models.Model):
+        
+        class Meta:
+            verbose_name = 'Ваши понравившееся публикации'
+            
+        post = models.ForeignKey("User", on_delete=models.CASCADE)
+        image = models.ImageField(verbose_name='Фотография *(200x160)', upload_to='apps/images/users')    
+        name = models.CharField(verbose_name="Название", max_length=50)
+        title = models.CharField(max_length=20)
+        likes = models.BooleanField(default=False)
+
+        def __str__(self):
+            return f'{self.likes}'
+
+
+class Favorites(models.Model):
+        
+        class Meta:
+            verbose_name = 'Избранное'
+            
+        user = models.ForeignKey("User",on_delete=models.CASCADE)
+        like = models.ForeignKey("Like",on_delete=models.CASCADE)
+        image = models.ImageField(verbose_name='Фотография *(400x167)', upload_to='apps/images/users')    
+        name = models.CharField(verbose_name="Название", max_length=50)
+        name_one = models.CharField(verbose_name="Oписание" , max_length=999)
+        
+        def __str__(self):
+            return self.name
+    
+    
+    
+    

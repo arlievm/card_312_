@@ -22,7 +22,13 @@ from apps.users.models import User
 from apps.users.serializers import UserSerializer, UserCRUDSerializer, CustomTokenRefreshSerializer, SendMessageSerializer
 
 from apps.utils.main import generateError, generateAuthInfo
-
+from apps.users.models import Basket
+from apps.users.models import Mycard
+from apps.users.models import Bankcard
+from apps.users.models import Subscr
+from apps.users.models import Coment
+from apps.users.models import Like
+from apps.users.models import Favorites
 
 class MVSDynamicPermission(permissions.BasePermission):
     def has_permission(self, request, view):
@@ -181,3 +187,70 @@ class SendMailUserApiView(APIView):
                       recipient_list=['temircard@gmail.com'])
             return Response(serializer.errors, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class BasketCreateListView(generics.ListCreateAPIView):
+    # serializer = BasketSerializer
+    queryset = Basket.objects.all()
+    
+
+class BasketDeteleView(generics.DestroyAPIView):
+    # serializer = BasketSerializer
+    queryset = Basket.objects.all()
+
+
+
+class MycardCreateListView(generics.ListCreateAPIView):
+    # serializer = BasketSerializer
+    queryset = Mycard.objects.all()
+    
+
+class MycardDeteleView(generics.DestroyAPIView):
+    # serializer = BasketSerializer
+    queryset = Mycard.objects.all()
+    
+    
+
+class BankcardCreateListView(generics.ListCreateAPIView):
+    # serializer = BasketSerializer
+    queryset = Bankcard.objects.all()
+    
+class BankcardDeteleView(generics.DestroyAPIView):
+    # serializer = BasketSerializer
+    queryset = Bankcard.objects.all()
+    
+    
+class SubscrCreateListView(generics.ListCreateAPIView):
+    # serializer = BasketSerializer
+    queryset = Subscr.objects.all()
+    
+class SubscrDeteleView(generics.DestroyAPIView):
+    # serializer = BasketSerializer
+    queryset = Subscr.objects.all()
+    
+    
+class ComentCreateListView(generics.ListCreateAPIView):
+    # serializer = BasketSerializer
+    queryset = Coment.objects.all()
+    
+class ComentDeteleView(generics.DestroyAPIView):
+    # serializer = BasketSerializer
+    queryset = Coment.objects.all()
+
+
+class LikeCreateListView(generics.ListCreateAPIView):
+    # serializer = BasketSerializer
+    queryset = Like.objects.all()
+    
+class LikeDeteleView(generics.DestroyAPIView):
+    # serializer = BasketSerializer
+    queryset = Like.objects.all()
+    
+    
+    
+class FavoritesCreateListView(generics.ListCreateAPIView):
+    # serializer = BasketSerializer
+    queryset = Favorites.objects.all()
+    
+class FavoritesDeteleView(generics.DestroyAPIView):
+    # serializer = BasketSerializer
+    queryset = Favorites.objects.all()
