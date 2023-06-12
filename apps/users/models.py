@@ -93,10 +93,10 @@ class Bankcard(models.Model):
             verbose_name_plural ='Добавить банковскую карту '
             
         user = models.ForeignKey("User",on_delete=models.CASCADE)    
-        numcard = models.IntegerField(verbose_name='Номер карты', max_length=64)
-        period = models.IntegerField(verbose_name='Срок действия карты', max_length=12)
+        numcard = models.CharField(verbose_name='Номер карты', max_length=64)
+        period = models.BooleanField(verbose_name='Срок действия карты', max_length=12)
         name_plural = models.CharField(verbose_name='Имя владельца', max_length=32)
-        code = models.IntegerField(verbose_name='Код CVC/CVV', max_length=12)
+        code = models.BooleanField(verbose_name='Код CVC/CVV', max_length=12)
         email = models.EmailField(verbose_name='Email', max_length=64, default=None, unique=True, blank=True, null=True)
         
         def __str__(self):
