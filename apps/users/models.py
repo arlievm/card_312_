@@ -79,6 +79,7 @@ class Basket(models.Model):
 class Mycard(models.Model):
     class Meta:
         verbose_name = 'Моя карта'
+        verbose_name_plural = 'Моя карта'
 
     name = models.CharField(verbose_name='№ карты',max_length=32)
     user = models.ForeignKey("User",on_delete=models.CASCADE)
@@ -106,6 +107,8 @@ class Subscr(models.Model):
         
         class Meta:
             verbose_name = 'Подписки'
+            verbose_name_plural = 'Подписки'
+            
             
         user = models.ForeignKey("User",on_delete=models.CASCADE)
         image = models.ImageField(verbose_name='Фотография', upload_to='apps/images/users')    
@@ -119,6 +122,7 @@ class Coment(models.Model):
         
         class Meta:
             verbose_name = 'Мои комментарии'
+            verbose_name_plural = 'Мои комментарии'
             
         user = models.ForeignKey("User",on_delete=models.CASCADE)
         image = models.ImageField(verbose_name='Фотография', upload_to='apps/images/users')    
@@ -134,6 +138,7 @@ class Like(models.Model):
         
         class Meta:
             verbose_name = 'Ваши понравившееся публикации'
+            verbose_name_plural = 'Ваши понравившееся публикации'
             
         post = models.ForeignKey("User", on_delete=models.CASCADE)
         image = models.ImageField(verbose_name='Фотография *(200x160)', upload_to='apps/images/users')    
@@ -149,6 +154,7 @@ class Favorites(models.Model):
         
         class Meta:
             verbose_name = 'Избранное'
+            verbose_name_plural = 'Избранное'
             
         user = models.ForeignKey("User",on_delete=models.CASCADE)
         like = models.ForeignKey("Like",on_delete=models.CASCADE)

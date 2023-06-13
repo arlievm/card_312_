@@ -19,6 +19,7 @@ class Products(models.Model):
     description = models.TextField(verbose_name='Описание')
     data = models.DateField(verbose_name="Дата", auto_now=False, auto_now_add=False)
     price = models.CharField(verbose_name="Цена", max_length=16)
+    price_size = models.CharField(verbose_name="Цена со скидкой", max_length=16)
     # quantity = models.PositiveIntegerField(default=0)
     # user_one = models.ForeignKey(Products,on_delete=models.CASCADE)
     

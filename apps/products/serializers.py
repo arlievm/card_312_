@@ -9,7 +9,7 @@ class ProductsSerializer(s.ModelSerializer):
 
     class Meta:
         model = Products
-        fields = ['partners', 'image', 'discounts', 'name', 'description', 'data', 'price', 'id']
+        fields = ['partners', 'image', 'discounts', 'name', 'description', 'data', 'price', 'id','price_size']
 
 
 class PlaybillSerializer(s.ModelSerializer):
