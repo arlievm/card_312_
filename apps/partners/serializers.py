@@ -15,7 +15,4 @@ class PartnersSerializer(s.ModelSerializer):
 
     class Meta:
         model = Partners
-        fields = ['logo', 'image', 'mail', 'name', 'address', 'org', 'inn', 'activity_type',
-                'description', 'phone_one', 'phone_two', 'phone_three', 'phone_four',
-                'whatsapp', 'youtube', 'telegram', 'instagram', 'facebook', 'day', 'data_time', 'id'
-                ]
+        fields = "__all__"
