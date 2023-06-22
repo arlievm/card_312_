@@ -12,6 +12,7 @@ class Contacts(models.Model):
     phone = models.CharField(verbose_name='Телефон',max_length=36)
     email = models.EmailField(verbose_name='Почта',max_length=64)
     email_e = models.EmailField(verbose_name='Почта 2',max_length=64)
+    email_r = models.EmailField(verbose_name='Почта 3',max_length=64)
 
     def __str__(self):
         return self.name
