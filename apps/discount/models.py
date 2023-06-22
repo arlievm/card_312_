@@ -10,5 +10,7 @@ class Discounts(models.Model):
     name = models.CharField(verbose_name="Наименование", max_length=50)
     description = models.TextField(verbose_name='Описание');
     
+    
+    
     def __str__(self):
         return self.name
