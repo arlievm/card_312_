@@ -14,7 +14,8 @@ class Contacts(models.Model):
     email_e = models.EmailField(verbose_name='Почта 2',max_length=64)
     email_r = models.EmailField(verbose_name='Почта 3',max_length=64)
     email_ww = models.EmailField(verbose_name='Почта 4',max_length=64)
-    email_qw = models.EmailField(verbose_name='Почта 4',max_length=64)
+    email_qw = models.EmailField(verbose_name='Почта 5',max_length=64)
+    email_qt = models.EmailField(verbose_name='Почта 6',max_length=64)
 
     def __str__(self):
         return self.name
